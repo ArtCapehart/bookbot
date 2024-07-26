@@ -31,10 +31,12 @@ def letter_counter(text):
     return letter_dict
 
 def letter_lister(letters_counted):
-    letter_string = [] 
-    for key, value in letters_counted.items():
-        if key.isalpha() == True: 
-            letter_string.append(f"the letter '{key}' is counted {value} times.")
+    total_letters = sum(letters_counted.values())
+    letter_string = []
+    for letter, count in letters_counted.items():
+        if letter.isalpha():
+            percentage = (count / total_letters) * 100
+            letter_string.append(f"the letter '{letter}' appears {percentage:.2f}% of the time.")
     letter_string.sort()
     return letter_string
 
