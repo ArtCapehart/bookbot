@@ -1,3 +1,5 @@
+import operator
+
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
@@ -33,11 +35,14 @@ def letter_counter(text):
 def letter_lister(letters_counted):
     total_letters = sum(letters_counted.values())
     letter_string = []
-    for letter, count in letters_counted.items():
+    # Sort the dictionary by value in descending order
+    sorted_letters = sorted(letters_counted.items(), key=operator.itemgetter(1), reverse=True)
+    rank = 1
+    for i, (letter, count) in enumerate(sorted_letters):
         if letter.isalpha():
             percentage = (count / total_letters) * 100
-            letter_string.append(f"the letter '{letter}' appears {percentage:.2f}% of the time.")
-    letter_string.sort()
+            letter_string.append(f"Rank {rank}: the letter '{letter}' appears {count} times ({percentage:.2f}%)")
+            rank += 1
     return letter_string
 
 
