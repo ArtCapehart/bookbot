@@ -35,7 +35,7 @@ def letter_counter(text):
 def letter_lister(letters_counted):
     total_letters = sum(letters_counted.values())
     letter_string = []
-    # Sort the dictionary by value in descending order
+    # Sort the dictionary by value in descending order with rank & %
     sorted_letters = sorted(letters_counted.items(), key=operator.itemgetter(1), reverse=True)
     rank = 1
     for i, (letter, count) in enumerate(sorted_letters):
