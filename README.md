@@ -5,6 +5,6 @@ This is a bot which reads (currently just the 1 file) and gives a total word cou
 
 Functionality to add:
 
-1. Added more books to the books.dir 
-2. List of all books in books.dir with their full filepath 
-3. A prompt which asks you for the book you want to run through the main.py script.
+1. Add more books to the books.dir
+2. List of all books in books.dir with their full filepath (for #3)
+3. A prompt which asks you for the book you want to run through the main.py script
