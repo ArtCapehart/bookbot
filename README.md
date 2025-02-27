@@ -62,4 +62,5 @@ This tool reads the contents of a text file (book), counts the number of words, 
    ```sh
    python3 main.py
 2. Analyze a Book
+    ```sh
   python3 main.py books/frankenstein.txt
