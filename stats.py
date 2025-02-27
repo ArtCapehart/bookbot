@@ -38,10 +38,11 @@ def sort_char_counts(char_counts):
     """
     Takes a dictionary of characters and their counts and returns a sorted list of dictionaries.
     Each dictionary has a single key-value pair, where the key is the character and the value is the count.
-    The list is sorted from greatest to least by the count.
+    The list is sorted from greatest to least by the count, and includes the percentage of each character to the total count.
 
     :param char_counts: A dictionary with characters as keys and their counts as values
     :return: A sorted list of dictionaries
     """
+    total_count = sum(char_counts.values())
     sorted_char_counts = sorted(char_counts.items(), key=lambda item: item[1], reverse=True)
-    return [{char: count} for char, count in sorted_char_counts]
+    return [{char: (count, f"{(count / total_count) * 100:.2f}%")} for char, count in sorted_char_counts]
