@@ -22,7 +22,6 @@ def list_books(directory):
 
     :param directory: Path to the directory containing the books
     """
-    print("Access Syntax: python3 main.py/books/<book_name.txt>")
     print("Available books:")
     for filename in os.listdir(directory):
         if filename.endswith(".txt"):
